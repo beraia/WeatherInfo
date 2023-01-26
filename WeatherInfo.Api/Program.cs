@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<WeatherInfoDbContext>(ctx=> ctx.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IWeatherInfoRequestService, WeatherInfoRequestService>();
+builder.Services.AddScoped<IWeatherInformationService, WeatherInformationService>();
 builder.Services.AddScoped<IWeatherService, WeatherService>();
 
 builder.Services.AddControllers();
