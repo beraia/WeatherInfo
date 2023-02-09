@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherInfo.Infrastructure.Db;
 
@@ -10,9 +11,11 @@ using WeatherInfo.Infrastructure.Db;
 namespace WeatherInfo.Infrastructure.Migrations
 {
     [DbContext(typeof(WeatherInfoDbContext))]
-    partial class WeatherInfoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230209094253_change-weatherInfo-model")]
+    partial class changeweatherInfomodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
